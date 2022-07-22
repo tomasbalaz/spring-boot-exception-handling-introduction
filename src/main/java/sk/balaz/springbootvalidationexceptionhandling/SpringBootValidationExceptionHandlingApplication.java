@@ -9,5 +9,4 @@ public class SpringBootValidationExceptionHandlingApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringBootValidationExceptionHandlingApplication.class, args);
     }
-
 }
