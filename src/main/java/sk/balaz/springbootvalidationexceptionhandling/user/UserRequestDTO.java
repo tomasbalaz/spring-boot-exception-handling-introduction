@@ -9,15 +9,17 @@ import javax.validation.constraints.*;
 @Builder
 public class UserRequestDTO {
 
-    @NotBlank
-    @NotNull
+    @NotBlank(message = "Invalid Name: Empty name")
+    @NotNull(message = "Invalid Name: Name is NULL")
+    @Size(min = 3, max = 30, message = "Invalid Name: Must be of 3 - 30 characters")
     private String name;
 
-    @Email
+    @Email(message = "Invalid email")
     private String email;
 
-    @NotBlank
-    @NotNull
+    @NotBlank(message = "Invalid Phone number: Empty number")
+    @NotNull(message = "Invalid Phone number: Number is NULL")
+    @Pattern(regexp = "^\\d{10}$", message = "Invalid phone number")
     private String mobile;
 
     @Min(value = 1, message = "Invalid Age: Equals to zero or Less than zero")
