@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/user")
+@RequestMapping("api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -21,7 +21,7 @@ public class UserController {
                 HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<User> getUserById( @PathVariable("id") Long id) {
         return ResponseEntity.ok().body(userService.getUserById(id));
     }
